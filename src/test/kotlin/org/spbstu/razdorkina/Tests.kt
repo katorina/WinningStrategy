@@ -10,7 +10,7 @@ class Tests {
     private val check = GameRealization(true)
 
     @Test
-    fun checkFixDate() {
+    fun checkFixDate() { //Делаем дату валидной для всех методов
         val date1 = "110"
         val date2 = "22.01"
         val date3 = "2 2"
@@ -24,7 +24,7 @@ class Tests {
     }
 
     @Test
-    fun checkSolve() {
+    fun checkSolve() { //Проверяем корректность ходов бота
         val preDate1 = "31.10"
         val preDate2 = "26.12"
         val preDate3 = "28.02"
@@ -36,7 +36,7 @@ class Tests {
     }
 
     @Test
-    fun checkIsLegalDate() {
+    fun checkIsLegalDate() { //Проверка существования даты
         val date1 = "28.02"
         val date2 = "29.02"
         val date3 = "31.06"
@@ -48,7 +48,7 @@ class Tests {
     }
 
     @Test
-    fun checkFunCheckRules() {
+    fun checkFunCheckRules() { //Провека соблюдения правил
         val preDate1 = "15.12"
         val preDate2 = "03.07"
         val preDate3 = "07.09"
