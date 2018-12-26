@@ -91,7 +91,7 @@ class GameRealization(private val mode: Boolean) {
 
         val chars = mutableListOf<Int>()
         for (i in 0 until dateStr.length)
-            chars.add((dateStr[i]).toInt() - 48)
+            chars.add((dateStr[i]) - '0')
 
         if (parts.size > 4) return "Incorrect date" //Отсекаем даты, в которых 5 и более цифр
 
@@ -189,16 +189,16 @@ class GameRealization(private val mode: Boolean) {
         val fixedNextDate = fixDate(nextDate)
         when {
             fixedNextDate == "Incorrect date" -> {
-                System.out.println("Некорректная дата")
+                System.out.println("Error 3: Некорректная дата")
                 return false
             }
             !isLegalDate(fixedNextDate) -> {
-                System.out.println("Такой даты не существует! Введите корректную дату")
+                System.out.println("Error 2: Такой даты не существует! Введите корректную дату")
                 return false
             }
             preDate == "" -> return true
             !checkRules(fixedPreDate, fixedNextDate) -> {
-                System.out.println("Играйте по правилам!\nПрибавьте 1 или 2 к числу или к месяцу")
+                System.out.println("Error 4: Играйте по правилам!\nПрибавьте 1 или 2 к числу или к месяцу")
                 return false
             }
             else -> return true
